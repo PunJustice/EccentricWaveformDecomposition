@@ -1,0 +1,155 @@
+
+#--------------------------------
+# Overall label for this simulation
+#--------------------------------
+
+# Short descriptive name
+# NOTE: this name is not necessarily unique! Please use the SXS or PRIVATE
+# identifier in alternative-names to unambiguously refer to this simulation.
+simulation-name = 35/Lev3
+
+# Other names under which this run has been referenced (e.g. papers)
+alternative-names = BFI:SurveyMeanAno_v2:35
+
+# Keywords to qualitatively identify this simulation
+keywords = 
+
+#--------------------------------
+# Researchers
+#--------------------------------
+
+# Point-of-contact for this waveform.  Usually the person having placed the
+# waveform into the repository
+point-of-contact-email = peter.nee@aei.mpg.de
+
+# Researchers who contributed to the generation of this waveform.
+# (typically this is the list of authors for publications using this
+#  waveform).
+authors-emails         = 
+
+#--------------------------------
+# References
+#--------------------------------
+
+# (1) papers describing this particular run (if any)
+simulation-bibtex-keys = SXSCatalog
+
+# (2) papers describing the evolution code
+code-bibtex-keys = Ossokine:2013zga,Hemberger:2012jz,Szilagyi:2009qz,Boyle:2009vi,Scheel:2008rj,Boyle:2007ft,Scheel:2006gg,Lindblom:2005qh,Pfeiffer:2002wt,SpECwebsite
+
+# (3) papers describing the initial data
+initial-data-bibtex-keys = Buchman:2012dw,Lovelace:2008tw,Pfeiffer:2007yz,Caudill:2006hw,Cook:2004kt
+
+# (4) papers describing eccentricity reduction
+quasicircular-bibtex-keys = Mroue:2012kv,Buonanno:2010yk,Mroue:2010re,Boyle:2007ft
+
+#--------------------------------
+# Input Parameters for Initial Data
+#--------------------------------
+
+initial-data-type         = BBH_SKS
+initial-separation        = 25.4115335699999996
+initial-orbital-frequency = 0.0065806900000000
+initial-adot              = -0.0000219300000000
+
+# Type of compact object (bh or ns)
+object1 = bh
+object2 = bh
+
+#--------------------------------
+# t=0 quantities
+#--------------------------------
+
+initial-ADM-energy           =  0.9943099462681608
+initial-ADM-linear-momentum  =  0.0000004627965667,  0.0000025270402696, -0.0000000000345600
+initial-ADM-angular-momentum =  0.0000000002334998, -0.0000000000032989,  1.2054505752401845
+
+# Christodoulou masses at t=0
+initial-mass1     =  0.4999999515360587
+initial-mass2     =  0.4999999447257903
+
+# dimensionless spins at t=0
+initial-dimensionless-spin1 = 0.0000000000062513, -0.0000000000053114,  0.0000000661442114
+initial-dimensionless-spin2 = 0.0000000000000034,  0.0000000000010005, -0.0000000009083936
+
+initial-position1 = 12.7057656324830131, -0.0000018179453487,  0.0000000087616030
+initial-position2 = -12.7057679375169865, -0.0000018179453487,  0.0000000087616030
+
+#--------------------------------
+# Quantities at reference time
+#--------------------------------
+
+# time at which we deem junk radiation to have sufficiently decayed
+relaxation-time = 160.0
+
+# time at which the reference quantities are measured
+reference-time = 160.0
+
+# Christodoulou masses at reference time (for BHs)
+# or ADM masses of isolated NSs with the same baryon
+# masses as the evolved stars for NSs.
+reference-mass1    = 0.500004584084349
+reference-mass2    = 0.5000046168591041
+
+# dimensionless spins, i.e. \chi_i = S_i / M_i^2, at reference time (t=0 for NSs)
+reference-dimensionless-spin1 = -5.91788649011315e-09, 1.653960588184665e-08, 1.4015476632536828e-06
+reference-dimensionless-spin2 = 6.933221906906138e-09, -1.7180239889064094e-08, 1.2453664905793332e-06
+
+# black hole centers at reference time
+reference-position1 = 4.503471664607953, 10.224378176403677, -3.9740507711631456e-07
+reference-position2 = -4.503320688354181, -10.223586873975258, -4.0993094878953774e-07
+
+# orbital frequency at reference time
+reference-orbital-frequency = 4.473737893264726e-12, -7.292756277914377e-12, 0.008688257399136135
+
+#--------------------------------
+# Info that concerns complete run
+#--------------------------------
+
+# orbital eccentricity and mean anomaly measured at reference time
+reference-eccentricity = 0.1517905
+reference-mean-anomaly = 5.874296
+
+# time when the common horizon is first detected
+common-horizon-time  = 11398.056522036697
+
+# number of orbits between t=0 common-horizon-time
+number-of-orbits     = 30.566902281502937
+
+#--------------------------------
+# Remnant properties
+#--------------------------------
+
+# mass of final BH (remnant)
+remnant-mass     =  0.9518271167175303
+
+# dimensionless spin of BH remnant
+remnant-dimensionless-spin = 1.3452680906107296e-09, -6.459624733518584e-10, 0.6855177987151894
+
+# coordinate velocity of remnant
+remnant-velocity = 3.285304048741465e-07, 2.5347505648861185e-06, -4.946798025039941e-09
+
+#--------------------------------
+# Code information
+#--------------------------------
+
+# version of this metadata file
+metadata-version = 1
+
+# unique, ordered list of revisions used for the evolution
+spec-revisions  = InitialCommit-32542-g5a7ca5896e
+
+# revision used for the initial data creation
+spells-revision = 5a7ca5896e65b8bba5a4841c4b37f99431d3e420
+
+# Date/time stamp: when simulation was postprocessed
+date-postprocessing = "2024-06-14T08:46:02.468943-07:00"
+
+# Date/time stamp: earliest run time in log file
+date-run-earliest = "2024-05-30T17:38:36"
+
+# Date/time stamp: latest run time in log file
+date-run-latest = "2024-06-07T03:39:25"
+
+# Date/time stamp: earliest link time in log file
+date-link-earliest = "2024-05-27T11:24:22+02:00"
