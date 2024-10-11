@@ -6,7 +6,7 @@ import gw_eccentricity
 
 def LoadSingleData(path, N):
     wf = sxs.load(path + "/Strain_N" + str(N))
-    meta = sxs.Metadata.from_file(path + "/metadata.txt")
+    meta = sxs.Metadata.from_file(path + "/metadata")
     horizons = sxs.load(path + "/Horizons")
 
     return wf, meta, horizons

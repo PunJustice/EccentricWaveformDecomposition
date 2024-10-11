@@ -85,3 +85,33 @@ def AddMeanAnomalyDomain(h22, IDs, periastron_definition="Amp"):
         temp = np.unwrap(temp)
         h22[IDs[k]]["MeanAno"] = temp - temp[-1]
     return h22
+
+
+def MeasureReferenceEccandMeanAno(h22, IDs, e_tref=-2000, l_tref=-1000):
+    ecc_object = {}
+    l_object = {}
+    N = np.size(IDs)
+
+    for k in range(N):
+        h22_raw = h22[IDs[k]]["h22"]
+        t = h22[IDs[k]]["t"]
+        Reh22 = np.real(np.array(h22_raw))
+        Imh22 = np.imag(np.array(h22_raw))
+        re_interp = scipy.interpolate.InterpolatedUnivariateSpline(t, Reh22)
+        im_interp = scipy.interpolate.InterpolatedUnivariateSpline(t, Imh22)
+        t_uniform = np.arange(min(t), max(t), step=0.1)
+        h22_uniform = re_interp(t_uniform) + 1.0j * im_interp(t_uniform)
+        dataDict = {}
+        dataDict["t"] = t_uniform
+        dataDict["hlm"] = {}
+        dataDict["hlm"][(2, 2)] = h22_uniform
+        test = gw_eccentricity.measure_eccentricity(
+            tref_in=[e_tref, l_tref],
+            dataDict=dataDict,
+            method="AmplitudeFits",
+            num_orbits_to_exclude_before_merger=0,
+        )
+        ecc_object[IDs[k]] = test["eccentricity"][0]
+        l_object[IDs[k]] = test["mean_anomaly"][1]
+
+    return ecc_object, l_object

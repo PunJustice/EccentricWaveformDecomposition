@@ -1,0 +1,56 @@
+{
+  "sxs_format": "rotating_paired_diff_multishuffle_bzip2",
+  "data_info": {
+    "data_type": "h",
+    "m_is_scaled_out": true,
+    "r_is_scaled_out": true,
+    "spin_weight": -2,
+    "ell_min": 2,
+    "ell_max": 8
+  },
+  "version_info": {
+    "python": "3.11.9 (main, Apr 19 2024, 16:48:06) [GCC 11.2.0]",
+    "numpy": "1.26.4",
+    "scipy": "1.12.0",
+    "h5py": "3.9.0",
+    "numba": "0.59.1",
+    "quaternion": "2023.0.3",
+    "spherical_functions": "2022.4.2",
+    "spinsfast": "2022.4.5",
+    "scri": "2022.8.11",
+    "quaternionic": "1.0.10",
+    "spherical": "1.0.14",
+    "sxs": "2022.5.6",
+    "spec_version_hist": [
+      [
+        "ef51849550a1d8a5bbdd810c7debf0dd839e86dd",
+        "Overall sign change in complex strain h."
+      ]
+    ]
+  },
+  "validation": {
+    "h5_file_size": 3841233,
+    "n_times": 37956,
+    "md5sum": "ac020469e4da1308b61bc020643898fe"
+  },
+  "modifications": {
+    "transform": {
+      "space_translation": [
+        -4.788514615151153e-06,
+        -4.500467354525034e-06,
+        -6.657695388758776e-07
+      ],
+      "boost_velocity": [
+        3.772051814610686e-09,
+        7.240581819396661e-08,
+        7.801542388415515e-09
+      ]
+    },
+    "add_memory": {
+      "integration_start_time": 160.0
+    },
+    "truncate": {
+      "tol": 1e-10
+    }
+  }
+}

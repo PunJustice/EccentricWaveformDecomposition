@@ -1,0 +1,2 @@
+point-of-contact-email = peter.nee@aei.mpg.de
+alternative-names = BFI:SurveyMeanAno_v2:04
