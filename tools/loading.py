@@ -93,3 +93,11 @@ def AddQCData(h22):
     h22["QC"]["h22"] = h22_data[junk_index:]
     h22["QC"]["t"] = t[junk_index:] - t[merger_index]
     return h22
+
+def AddA22andPhi22(h22, IDs):
+    N = np.size(IDs)
+    for k in range(N):
+        h22[IDs[k]]["A22"] = np.abs(h22[IDs[k]]["h22"])
+        temp_phase = np.unwrap(-np.angle(h22[IDs[k]]["h22"]))
+        h22[IDs[k]]["phi22"] = temp_phase-temp_phase[-1]
+    return h22
