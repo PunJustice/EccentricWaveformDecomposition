@@ -40,7 +40,7 @@ def PeriastronIndicesFromQC(h22, IDs, include_ends=False):
         A22_QC_interpolated = A22_QC_interp(h22[IDs[k]]["t"])
         temp = scipy.signal.find_peaks(np.abs(h22[IDs[k]]["h22"]) - A22_QC_interpolated)
         temp = list(temp)[0]
-        if h22[IDs[k]]["t"][temp[-1]] > -50.0:
+        if h22[IDs[k]]["t"][temp[-1]] > -10.0:
             temp = temp[:-1]
         if include_ends:
             temp = np.append([0], temp)
@@ -115,3 +115,26 @@ def MeasureReferenceEccandMeanAno(h22, IDs, e_tref=-2000, l_tref=-1000):
         l_object[IDs[k]] = test["mean_anomaly"][1]
 
     return ecc_object, l_object
+
+
+def InterpolateToUniformMeanAnomalyDomain(
+    h22, IDs, dl=0.001, l_min=-30 * np.pi, l_max=0
+):
+    N = np.size(IDs)
+    N_points = int(l_max - l_min / dl) + 1
+    meanano_domain = np.linspace(l_min, l_max, N_points)
+    for k in range(N):
+        A22_interp = scipy.interpolate.InterpolatedUnivariateSpline(
+            h22[IDs[k]]["MeanAno"], h22[IDs[k]]["A22"]
+        )
+        phi22_interp = scipy.interpolate.InterpolatedUnivariateSpline(
+            h22[IDs[k]]["MeanAno"], h22[IDs[k]]["phi22"]
+        )
+        t_interp = scipy.interpolate.InterpolatedUnivariateSpline(
+            h22[IDs[k]]["MeanAno"], h22[IDs[k]]["t"]
+        )
+        h22[IDs[k]]["A22_uniform"] = A22_interp(meanano_domain)
+        h22[IDs[k]]["phi22_uniform"] = phi22_interp(meanano_domain)
+        h22[IDs[k]]["t_uniform"] = t_interp(meanano_domain)
+        h22[IDs[k]]["MeanAno_uniform"] = meanano_domain
+    return h22
