@@ -40,7 +40,7 @@ def PeriastronIndicesFromQC(h22, IDs, include_ends=False):
         A22_QC_interpolated = A22_QC_interp(h22[IDs[k]]["t"])
         temp = scipy.signal.find_peaks(np.abs(h22[IDs[k]]["h22"]) - A22_QC_interpolated)
         temp = list(temp)[0]
-        if h22[IDs[k]]["t"][temp[-1]] > -10.0:
+        if h22[IDs[k]]["t"][temp[-1]] > -100.0:
             temp = temp[:-1]
         if include_ends:
             temp = np.append([0], temp)
@@ -69,21 +69,43 @@ def ComputeMeanAnomalyArray(times, periastron_times):
     return result
 
 
-def AddMeanAnomalyDomain(h22, IDs, periastron_definition="Amp"):
+def ComputeMeanAnomalyArraySmooth(times, periastron_times):
+    N = np.size(periastron_times)
+    periastron_values = np.zeros(N)
+    for i in range(N):
+        periastron_values[i] = -(N - i - 1) * 2 * np.pi
+    mean_ano_function = scipy.interpolate.InterpolatedUnivariateSpline(
+        periastron_times, periastron_values, k=2
+    )
+    return mean_ano_function(times)
+
+
+def AddMeanAnomalyDomain(
+    h22, IDs, periastron_definition="Amp", include_ends=True, UseSmooth=False
+):
     N = np.size(IDs)
     if periastron_definition == "Amp":
-        periastron_indices = PeriastronIndices(h22, IDs, include_ends=True)
+        periastron_indices = PeriastronIndices(h22, IDs, include_ends=include_ends)
     elif periastron_definition == "h20":
-        periastron_indices = PeriastronIndicesFrom20(h22, IDs, include_ends=True)
+        periastron_indices = PeriastronIndicesFrom20(
+            h22, IDs, include_ends=include_ends
+        )
     elif periastron_definition == "QC":
-        periastron_indices = PeriastronIndicesFromQC(h22, IDs, include_ends=True)
+        periastron_indices = PeriastronIndicesFromQC(
+            h22, IDs, include_ends=include_ends
+        )
     else:
         Exception("Definition of periastron not supported!")
     for k in range(N):
         periastron_times = h22[IDs[k]]["t"][periastron_indices[IDs[k]]]
-        temp = ComputeMeanAnomalyArray(h22[IDs[k]]["t"], periastron_times)
-        temp = np.unwrap(temp)
-        h22[IDs[k]]["MeanAno"] = temp - temp[-1]
+        if UseSmooth:
+            h22[IDs[k]]["MeanAno"] = ComputeMeanAnomalyArraySmooth(
+                h22[IDs[k]]["t"], periastron_times
+            )
+        else:
+            temp = ComputeMeanAnomalyArray(h22[IDs[k]]["t"], periastron_times)
+            temp = np.unwrap(temp)
+            h22[IDs[k]]["MeanAno"] = temp - temp[-1]
     return h22
 
 

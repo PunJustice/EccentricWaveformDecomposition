@@ -1,0 +1,129 @@
+{
+    "simulation_name": "006/Lev2",
+    "alternative_names": [
+        "BFI:Ecc1dSur_rerun:006",
+        "SXS:BBH:2575"
+    ],
+    "keywords": [],
+    "point_of_contact_email": "sfield@astro.cornell.edu",
+    "authors_emails": [],
+    "simulation_bibtex_keys": [
+        "SXSCatalog",
+        "Islam:2021mha"
+    ],
+    "code_bibtex_keys": [
+        "Ossokine:2013zga",
+        "Hemberger:2012jz",
+        "Szilagyi:2009qz",
+        "Boyle:2009vi",
+        "Scheel:2008rj",
+        "Boyle:2007ft",
+        "Scheel:2006gg",
+        "Lindblom:2005qh",
+        "Pfeiffer:2002wt",
+        "SpECwebsite"
+    ],
+    "initial_data_bibtex_keys": [
+        "Buchman:2012dw",
+        "Lovelace:2008tw",
+        "Pfeiffer:2007yz",
+        "Caudill:2006hw",
+        "Cook:2004kt"
+    ],
+    "quasicircular_bibtex_keys": [
+        "Mroue:2012kv",
+        "Buonanno:2010yk",
+        "Mroue:2010re",
+        "Boyle:2007ft"
+    ],
+    "initial_data_type": "BBH_SHK",
+    "initial_separation": 17.54654859,
+    "initial_orbital_frequency": 0.01275117,
+    "initial_adot": 0.000307587,
+    "object1": "bh",
+    "object2": "bh",
+    "initial_ADM_energy": 0.9936139974974847,
+    "initial_ADM_linear_momentum": [
+        2.5134784e-09,
+        9.5251584e-09,
+        2.93835e-11
+    ],
+    "initial_ADM_angular_momentum": [
+        -1.3171e-11,
+        -1.7842e-11,
+        1.1752186889856135
+    ],
+    "initial_mass1": 0.4999999912120359,
+    "initial_mass2": 0.4999999920048371,
+    "initial_dimensionless_spin1": [
+        -7.165e-13,
+        -1.0178e-12,
+        -3.573174e-10
+    ],
+    "initial_dimensionless_spin2": [
+        -1.79084e-11,
+        -2.39529e-11,
+        -7.3811562e-09
+    ],
+    "initial_position1": [
+        8.773274386840248,
+        3.27821964e-08,
+        -4.7856819e-09
+    ],
+    "initial_position2": [
+        -8.773274203159753,
+        3.27821964e-08,
+        -4.7856819e-09
+    ],
+    "relaxation_time": 510.0,
+    "reference_time": 510.0,
+    "reference_mass1": 0.499999739936,
+    "reference_mass2": 0.499999733608,
+    "reference_dimensionless_spin1": [
+        1.23907923816e-09,
+        -1.461841068e-09,
+        -2.948613812e-06
+    ],
+    "reference_dimensionless_spin2": [
+        -5.52151642083e-10,
+        1.1744698108e-09,
+        -2.94133079353e-06
+    ],
+    "reference_position1": [
+        8.69856188474,
+        1.21194640626,
+        -1.3355474135e-06
+    ],
+    "reference_position2": [
+        -8.69855295152,
+        -1.21193630589,
+        -1.3311411774e-06
+    ],
+    "reference_orbital_frequency": [
+        3.28172129024e-12,
+        8.60332052392e-13,
+        0.0134304709969
+    ],
+    "reference_eccentricity": 0.030364,
+    "reference_mean_anomaly": 0.496831,
+    "common_horizon_time": 8777.2487633,
+    "number_of_orbits": 26.7035708745,
+    "remnant_mass": 0.951605588706,
+    "remnant_dimensionless_spin": [
+        7.43345535459e-10,
+        1.61507100692e-09,
+        0.686540215728
+    ],
+    "remnant_velocity": [
+        8.92307273785e-09,
+        1.05427616911e-08,
+        8.25793504038e-08
+    ],
+    "metadata_version": 1,
+    "spec_revisions": "InitialCommit-31500-g7d82535c55",
+    "spells_revision": "7d82535c55b37e5d835b6dc3c72414cd73f02304",
+    "date_postprocessing": "2021-05-25T13:15:50-07:00",
+    "date_run_earliest": "2021-04-18T18:26:37",
+    "date_run_latest": "2021-04-23T18:55:41",
+    "date_link_earliest": "2021-04-14T20:34:04-07:00"
+}

@@ -1,0 +1,84 @@
+{
+  "sxs_format": "rotating_paired_diff_multishuffle_bzip2",
+  "data_info": {
+    "data_type": "h",
+    "m_is_scaled_out": true,
+    "r_is_scaled_out": true,
+    "spin_weight": -2,
+    "ell_min": 2,
+    "ell_max": 8
+  },
+  "version_info": {
+    "python": "3.10.9 (main, Jan 11 2023, 15:21:40) [GCC 11.2.0]",
+    "numpy": "1.23.5",
+    "scipy": "1.10.0",
+    "h5py": "3.7.0",
+    "numba": "0.56.4",
+    "quaternion": "2022.4.1",
+    "spherical_functions": "2022.4.1",
+    "spinsfast": "2022.4.1",
+    "scri": "2022.3.4",
+    "quaternionic": "1.0.6",
+    "spherical": "1.0.13",
+    "sxs": "2022.4.3",
+    "spec_version_hist": [
+      [
+        "ef51849550a1d8a5bbdd810c7debf0dd839e86dd",
+        "Overall sign change in complex strain h."
+      ]
+    ]
+  },
+  "validation": {
+    "h5_file_size": 3075482,
+    "n_times": 26943,
+    "md5sum": "aa5dbaca7c2a7deb934d787feed7832b"
+  },
+  "modifications": {
+    "extrapolate": {
+      "CoordRadii": [
+        "0425",
+        "0436",
+        "0449",
+        "0462",
+        "0476",
+        "0491",
+        "0507",
+        "0524",
+        "0542",
+        "0562",
+        "0583",
+        "0605",
+        "0630",
+        "0656",
+        "0685",
+        "0716",
+        "0750",
+        "0788",
+        "0830",
+        "0876",
+        "0928",
+        "0987",
+        "1053",
+        "1130"
+      ]
+    },
+    "transform": {
+      "space_translation": [
+        3.6675033745259653e-06,
+        2.2604220989748903e-06,
+        -7.848061191040413e-06
+      ],
+      "boost_velocity": [
+        -1.280612349594802e-08,
+        -6.490545844890034e-09,
+        3.80960955148733e-09
+      ]
+    },
+    "add_memory": {
+      "integration_start_time": 630.0
+    },
+    "truncate": {
+      "tol": 1e-10
+    }
+  }
+}

@@ -1,0 +1,2 @@
+point-of-contact-email = sfield@astro.cornell.edu
+alternative-names = BFI:Ecc1dSur_rerun:036, SXS:BBH:2605
